@@ -16,9 +16,11 @@ ou clique no botão __Download ZIP__
 
 ###Como Usar 
 
-#####Passo 1: Importe o script __app.js__ 
+#####Passo 1: Importe o script __app.js__ e a biblioteca jQuery.
+Se você não possui a biblioteca jQuery, baixe a última versão aqui: [http://jquery.com/download/](http://jquery.com/download/)
 
 ```html
+<script src='jquery.min.js'></script>
 <script src='lib/app.js'></script>
 ```
 
