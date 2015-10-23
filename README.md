@@ -1,39 +1,38 @@
-![ViaJS Image](https://cloud.githubusercontent.com/assets/13234884/9150556/a139f32c-3da4-11e5-9c6a-48ac1ac5a998.png)
-
-Via is a small library that allows you to load content on to a page dynamically
-
-##Demo
+#{ViaJS}
+Via é uma pequena, porém poderosa biblioteca javascript que facilita o carregamento de conteúdo de uma página para outra dinâmicamente. Sem refresh.
+###Demonstração
 
 [ViaJS Demo (click me)](http://viajs.herokuapp.com/)
 
-## Installing
+###Baixando
 
+Clone o repositório usando
 ```
-git clone https://github.com/abdi0987/ViaJS.git
+git clone https://github.com/matheusviegas/ViaJS.git
 ```
 
-Link to the app.js file
+ou clique no botão __Download ZIP__
+
+
+###Como Usar 
+
+#####Passo 1: Importe o script __app.js__ 
 
 ```html
 <script src='lib/app.js'></script>
 ```
 
-##Usage 
-![ViaJS Image](https://cloud.githubusercontent.com/assets/13234884/9150024/d8570b2a-3d8a-11e5-96ca-9bcc5085fe31.png)
-
-
-###Example
-
-Specifiy were to load the content
+#####Passo 2: Especifique __onde__ o conteúdo será carregado
 ```html
-<div class="container" via-views></div>
+<div class="conteudo" via-views></div>
 ```
-add __via-views__ attribute to your div element to specifiy where to load the content 
+O atributo __via-views__ deve estar na div que receberá o conteúdo. É assim que o script identifica onde o conteúdo deve ser carregado.
 
+Especifique todas as _views_ que poderão ser carregadas na div e especifique uma _view_ padrão (defaultView). Essa _view_ padrão será carregada caso o usuário tente acessar alguma página que não está listada nas _views_ como acessível.
 
-Specifiy your views url and a defaultView if the user enters an invalid hashtag url.
+Passo 3: Instancie um objeto da classe __Via__,chame o método __init__ e passe como parâmetro o array de _views_.
 
-Then call the init function and pass it your views
+Exemplo:
 
 ```javascript
 var views = {
@@ -51,12 +50,12 @@ var views = {
     }
 }
 
-var via = new Via();
+var via = new Via(); // Instancia um objeto da classe Via()
 
-via.init(views);
+via.init(views); // Inicia as views
 ```
 
-Then use an __a__ tag
+#####Passo 4:Use uma tag < a > com o atributo via-link
 
 ```html
 <ul class="nav navbar-nav">
@@ -65,4 +64,5 @@ Then use an __a__ tag
     <li><a via-link href="contact">Contact</a></li>
 </ul>
 ```
-Remeber for the href attribute enter the same name you gave the views object and add __via-link__ attribute to every __<a>__ tag you are using to load your content
+
+Lembre-se de colocar no atributo __href__ o mesmo nome da _view_ que você informou no _array de views_ e adicione o atributo __via-link__ para todas as tags < a > que você usará para carregar o conteúdo.
